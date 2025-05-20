@@ -1,0 +1,46 @@
+/* Custom styles that extend Bootstrap */
+body {
+    background-color: #f4f4f4;
+}
+
+.todo-item {
+    cursor: move;
+    transition: background-color 0.2s ease;
+}
+
+.todo-item:hover {
+    background-color: #f8f9fa;
+}
+
+.todo-item.sortable-ghost {
+    opacity: 0.4;
+}
+
+.todo-item.sortable-chosen {
+    background-color: #e9ecef;
+}
+
+.todo-delete {
+    cursor: pointer;
+    color: #dc3545;
+}
+
+.todo-delete:hover {
+    color: #bd2130;
+}
+
+/* Add a small drag handle visual */
+.drag-handle {
+    cursor: move;
+    color: #6c757d;
+    margin-right: 8px;
+}
+
+/* Show the validation message when needed */
+.is-invalid + #todoInputFeedback {
+    display: block;
+}
+
+#todoInputFeedback {
+    display: none;
+}

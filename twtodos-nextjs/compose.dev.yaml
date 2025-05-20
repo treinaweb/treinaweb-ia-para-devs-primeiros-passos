@@ -1,0 +1,28 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      # Mount source code directories
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./next.config.ts:/app/next.config.ts
+      - ./next-env.d.ts:/app/next-env.d.ts
+      - ./postcss.config.mjs:/app/postcss.config.mjs
+      - ./tsconfig.json:/app/tsconfig.json
+      # Prevent these directories from being overwritten by host
+      - /app/node_modules
+      - /app/.next
+    # Enable file watching for hot reload
+    stdin_open: true
+    tty: true
+    # Set hostname for Docker to resolve host machine
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # Restart on failure but allow manual shutdown
+    restart: unless-stopped

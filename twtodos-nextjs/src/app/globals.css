@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f4f6;
+  --foreground: #171717;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --input-border: #d1d5db;
+  --input-focus: #3b82f6;
+  --todo-hover: #f9fafb;
+  --todo-drag: #e5e7eb;
+  --error: #ef4444;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-foreground: #ffffff;
+  --input-border: #475569;
+  --input-focus: #60a5fa;
+  --todo-hover: #1e293b;
+  --todo-drag: #334155;
+  --error: #f87171;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
